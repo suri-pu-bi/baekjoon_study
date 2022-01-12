@@ -12,32 +12,21 @@
 
 # for문 첫 번째 참가자부터 다섯번째 참가자까지 1점 ~ 5점
 
-from random import *
-
-def sort (s_list) :
-    s_list.sort()
-    print(s_list)
-    print(s_list[4])
-    return s_list[4]
 
 score_list = []
 
 
-for i in range(1,6):
-    f_score = 0
-    for j in range(1,5) :
-        score = int(input().split)
-        if 1<=score<=5 :
-            f_score += score
-            print(score,end=" ")
-         
-    
-    score_list.append(f_score)    
-    print()
+for i in range(0,5):
+    score = input().split()
+    score = list(map(int,score)) 
+    # score = map(int,score) <map object at 0x00000244B945FC10> iterator 자체 반환되므로 list () 씌워주기
+    s_score = sum(score)
+    score_list.append(s_score)
 
-print(score_list)
-final_score = sort(score_list)
-print(score_list)
-winner = score_list.index(final_score)
-print(winner+1, final_score)
+
+winnerscore = max(score_list) 
+# max() list 요소들 중 최댓값 구하기
+winner = score_list.index(winnerscore)
+print(winner+1, winnerscore)
+
 

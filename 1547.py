@@ -5,6 +5,7 @@ M = int(input())
 if (1<=M<=50):
     for i in range(M):
         x, y = map(int, input().split())
+        # x, y 굳이 list로 안 묶어도 된다!
         a = present_cup.index(x)
         b = present_cup.index(y)
 
